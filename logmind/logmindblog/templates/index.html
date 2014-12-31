@@ -1,0 +1,4 @@
+
+{% for eachblog in view.allblogs %}
+        <li><a href="http://127.0.0.1:8000/logmindblog/view/{{ eachblog.slug }}" style="text-decoration:none; cursor:pointer;">{{ eachblog.blogtitle }}</a></li>
+{% endfor %}

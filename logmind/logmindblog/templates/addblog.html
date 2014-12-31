@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Add Blog</title>
+    </head>
+    <body>
+    
+    	<form name="frmAddBlog" id="frmAddBlog" method="post" action="http://127.0.0.1:8000/logmindblog/postblog/">
+    	{% csrf_token %}
+        	<p>BLOG : </p><input type="text" name="txtBlogTitle" id="txtBlogTitle" required  >
+        	<p>Description : </p><textarea name="txtDesc" id="txtDesc" required ></textarea>
+        	<p>Category : </p><input type="text" name="txtCatId" id="txtCatId" required  >
+        	<input type="submit" >
+        </form>
+    </body>
+</html>

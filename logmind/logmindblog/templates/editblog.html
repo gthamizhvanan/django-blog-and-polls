@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>Edit Blog</title>
+    </head>
+    <body>
+        
+    	<form name="frmEditBlog" id="frmEditBlog" method="post" action="http://127.0.0.1:8000/logmindblog/postblog/">
+    	{% csrf_token %}
+        	<p>BLOG : </p><input type="text" name="txtBlogTitle" id="txtBlogTitle" required value={% block head_title %}{{ post.blogtitle }}{% endblock %}  >
+        	<p>Description : </p><textarea name="txtDesc" id="txtDesc" required >{{ post.description }}</textarea>
+        	<p>Category : </p><input type="text" name="txtCatId" id="txtCatId" required value={% block pcategory %}{{ post.blogcategory_id }}{% endblock %}  >
+            <input type="hidden" name="txtBlogId" id="txtBlogId" required value={% block pblogid %}{{ post.id }}{% endblock %}  >
+        	<input type="submit" >
+        </form>
+    </body>
+</html>
